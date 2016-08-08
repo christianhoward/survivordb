@@ -8,6 +8,10 @@ class Player(models.Model):
     occupation = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
+    
+    def __str__(self):
+        name = self.firstname + " " + self.lastname
+        return name
 
 class Season(models.Model):
     sid = models.IntegerField(primary_key=True)
@@ -22,6 +26,9 @@ class Season(models.Model):
     #aed is air end date
     aed = models.DateField()
     
+    def __str__(self):
+        return self.seasonname
+    
 class PxS(models.Model):
     # Do I need a primary key on this? PROBABLY -- One to many relationship: one player, potential multiple seaons
     pid = models.ForeignKey('Player', on_delete = models.CASCADE,)
@@ -30,6 +37,10 @@ class PxS(models.Model):
     finishposition = models.IntegerField()
     # total number of players that season
     totalpositions = models.IntegerField()
+    
+    def __str__(self):
+        name = "Player: " + str(self.pid) + " | Season: " + str(self.sid)
+        return name
     
 class Statistics(models.Model):
     pid = models.ForeignKey('Player', on_delete = models.CASCADE,)
@@ -45,3 +56,5 @@ class Statistics(models.Model):
     # total duels won on Redemption Island
     totalduelswon = models.IntegerField()
     
+    def __str__(self):
+        return str(self.pid)
