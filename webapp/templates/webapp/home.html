@@ -1,4 +1,5 @@
-<html>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</html>
+{% for player in players %}
+    <p>Player Name: {{ player }}</p>
+    <p>Occupation: {{ player.occupation }}</p>
+    <p>Hometown: {{ player.city }}, {{ player.state }}</p>
+{% endfor %}
