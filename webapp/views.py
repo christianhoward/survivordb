@@ -1,16 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Player, Season
 
 def home(request):
     players = Player.objects.order_by('pid')
     return render(request, 'webapp/home.html', {'players': players})
 
-def player(request):
-    players = Player.objects.order_by('pid')
-    return render(request, 'webapp/player.html', {'players': players})
-    #make player.html
+def player(request, pk):
+    player = get_object_or_404(Player, pk=pk)
+    return render(request, 'webapp/player.html', {'player': player})
     
-def season(request):
-    seasons = Season.objects.order_by('sid')
-    return render(request, 'webapp/season.html', {'seasons': seasons})
-    #make season.html
+def season(request, pk):
+    season = get_object_or_404(Season, pk=pk)
+    return render(request, 'webapp/season.html', {'season': season})
