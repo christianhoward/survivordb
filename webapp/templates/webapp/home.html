@@ -1,9 +1,15 @@
-{% for player in players %}
-    <p>Player Name: {{ player }}</p>
-    <p>Occupation: {{ player.occupation }}</p>
-    <p>Hometown: {{ player.city }}, {{ player.state }}</p>
-{% endfor %}
+{% extends 'webapp/base.html' %}
 
+{% block content %}
+{% for player in players %}
+    <div>
+        <p>Player Name: {{ player }}</p>
+        <p>Occupation: {{ player.occupation }}</p>
+        <p>Hometown: {{ player.city }}, {{ player.state }}</p>
+        <hr>
+    </div>
+{% endfor %}
+{% endblock %}
 <!--<form name="searchform" id="" method="" action="">
     <fieldset>
         <legend>Search Form</legend>

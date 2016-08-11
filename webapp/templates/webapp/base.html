@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>SurvivorDB Web App</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/webapp.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'> <!--USED FOR HEADINGS-->
+        <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css'> <!--USED FOR BODY TEXT-->
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">SurvivorDB Web App</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
