@@ -1,6 +1,5 @@
 {% extends 'webapp/base.html' %}
 {% block content %}
-    <div class="row">
 {% for season in seasons %}
         <div class="col-md-3 portfolio-item">
             <a href="{% url 'season' season.sid %}">
@@ -9,5 +8,4 @@
             <br>
         </div>
 {% endfor %}
-    </div>
 {% endblock %}
