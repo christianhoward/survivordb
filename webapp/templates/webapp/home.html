@@ -1,18 +1,17 @@
 {% extends 'webapp/base.html' %}
 
 {% block content %}
-{% for player in players %}
-    <div>
-        <p>Player Name: {{ player }}</p>
-        <p>Occupation: {{ player.occupation }}</p>
-        <p>Hometown: {{ player.city }}, {{ player.state }}</p>
-        <hr>
-    </div>
-{% endfor %}
-{% endblock %}
-<!--<form name="searchform" id="" method="" action="">
+<form name="searchform" id="" method="POST" action="">{% csrf_token %}
     <fieldset>
         <legend>Search Form</legend>
-        <p><input id="" name="" type="" placeholder="Enter Player Name"></p>
+        <p>Season Name: <select name="Season" id="" class="" value="Season">
+            <option value="">Choose a Season</option>
+            {% for season in seasons %}
+                <option value="{{ season.sid }}">{{ season.seasonname }}</option>
+            {% endfor %}
+            </select>
+        </p>
+        <input type="submit">
     </fieldset>
-</form>-->
+</form>
+{% endblock %}

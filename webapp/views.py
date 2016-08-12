@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Player, Season
 
 def home(request):
-    players = Player.objects.order_by('pid')
-    return render(request, 'webapp/home.html', {'players': players})
+    seasons = Season.objects.order_by('sid')
+    return render(request, 'webapp/home.html', {'seasons': seasons})
 
 def player(request, pk):
     player = get_object_or_404(Player, pk=pk)
