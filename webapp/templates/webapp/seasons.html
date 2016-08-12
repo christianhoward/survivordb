@@ -1,0 +1,13 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+    <div class="row">
+{% for season in seasons %}
+        <div class="col-md-3 portfolio-item">
+            <a href="{% url 'season' season.sid %}">
+                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+            </a>
+            <br>
+        </div>
+{% endfor %}
+    </div>
+{% endblock %}

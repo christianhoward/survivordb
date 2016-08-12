@@ -12,3 +12,7 @@ def player(request, pk):
 def season(request, pk):
     season = get_object_or_404(Season, pk=pk)
     return render(request, 'webapp/season.html', {'season': season})
+
+def seasons(request):
+    seasons = Season.objects.order_by('sid')
+    return render(request, 'webapp/seasons.html', {'seasons': seasons})
