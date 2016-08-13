@@ -4,14 +4,13 @@
 <form name="searchform" id="" method="POST" action="">{% csrf_token %}
     <fieldset>
         <legend>Search Form</legend>
-        <p>Season Name: <select name="Season" id="" class="" value="Season">
-            <option value="">Choose a Season</option>
+        <p>Season Name: <select onchange="location = this.options[this.selectedIndex].value;" name="Season" id="" class="" value="Season">
+            <option>Choose a Season</option>
             {% for season in seasons %}
-                <option value="{{ season.sid }}">{{ season.seasonname }}</option>
+                <option value="{% url 'season' season.sid %}">Season {{ season.sid }} -- {{ season.seasonname }}</option>
             {% endfor %}
             </select>
         </p>
-        <input type="submit">
     </fieldset>
 </form>
 {% endblock %}
