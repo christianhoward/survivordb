@@ -5,7 +5,7 @@
     <fieldset>
         <legend>Search Form</legend>
         <p>Season Name: <select onchange="location = this.options[this.selectedIndex].value;" name="Season" id="" class="" value="Season">
-            <option>Choose a Season</option>
+            <option>Choose a Season...</option>
             {% for season in seasons %}
                 <option value="{% url 'season' season.sid %}">Season {{ season.sid }} -- {{ season.seasonname }}</option>
             {% endfor %}

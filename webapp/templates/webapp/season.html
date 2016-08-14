@@ -4,4 +4,8 @@
     <p>Location: {{ season.location }}</p>
     <p>Film Dates: {{ season.fsd }} -- {{ season.fed }}</p>
     <p>Air Dates: {{ season.asd }} -- {{ season.aed }}</p>
+    <hr>
+    {% for player in players %}
+        <p><a href="{% url 'player' player.pid %}">{{ player.firstname }} {{ player.lastname }}</a></p>
+    {% endfor %}
 {% endblock %}
