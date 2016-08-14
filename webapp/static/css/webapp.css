@@ -8,8 +8,23 @@ h1 a:hover {
     text-decoration: none;
 }
 
-p {
+p, tr {
     font-family: 'Allerta';
+}
+
+.tblheader {
+    font-family: 'Squada One';
+    text-align: center;
+}
+
+table, th, tr, td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 1px;
+    margin: 0px auto;
+    padding: 10px;
+    
 }
 
 .page-header {
@@ -17,5 +32,6 @@ p {
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
+
 
 /* https://designschool.canva.com/blog/100-color-combinations #70 */
