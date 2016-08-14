@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView
-from .models import Player, Season
+from .models import Player, Season, PxS
 
 def home(request):
     seasons = Season.objects.order_by('sid')
@@ -17,8 +17,6 @@ def season(request, pk):
         'webapp/season.html',
         {'season': season, 'players': Player.objects.all()}
     )
-    """season = get_object_or_404(Season, pk=pk)
-    return render(request, 'webapp/season.html', {'season': season})"""
 
 def seasons(request):
     seasons = Season.objects.order_by('sid')
