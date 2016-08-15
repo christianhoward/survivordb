@@ -14,4 +14,27 @@
         <td>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
     </tr>
 </table>
+<br>
+{% for stat in statistics %}
+<table>
+    <tr>
+        <td colspan=3 class="tblheader"><h1>Statistics</h1></td>
+    </tr>
+    <tr>
+        <td>Total Seasons: {{ stat.totalseasons }}</td>
+        <td>Total Days: {{ stat.totaldays }}</td>
+        <td>Total Votes Received: {{ stat.totalvotesreceived }}</td>
+    </tr>
+    <tr>
+        <td>Tribal Wins: {{ stat.tribalwins }}</td>
+        <td>Individual Wins: {{ stat.individualwins }}</td>
+        <td>Total Wins: {{ stat.totalwins }}</td>
+    </tr>
+    <tr>
+        <td>Days on Exile Island: {{ stat.daysonexile }}</td>
+        <td>Days on Redemption Island: {{ stat.daysonredemption }}</td>
+        <td>Total Redemption Island Duels Won: {{ stat.totalduelswon }}</td>
+    </tr>
+</table>
+{% endfor %}
 {% endblock %}

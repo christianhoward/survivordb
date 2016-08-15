@@ -31,7 +31,6 @@ class Season(models.Model):
         return self.seasonname
     
 class PxS(models.Model):
-    # Do I need a primary key on this? PROBABLY -- One to many relationship: one player, potential multiple seaons
     pid = models.ForeignKey('Player', on_delete = models.CASCADE,)
     sid = models.ForeignKey('Season', on_delete = models.CASCADE,)
     # position they finished in
