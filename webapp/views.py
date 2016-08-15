@@ -8,14 +8,14 @@ def home(request):
 
 def player(request, pk):
     player = get_object_or_404(Player, pk=pk)
-    return render(request, 'webapp/player.html', {'player': player})
+    return render(request, 'webapp/player.html', {'player': player, 'seasons': player.season_set.order_by('sid')})
     
 def season(request, pk):
     season = get_object_or_404(Season, pk=pk) 
     return render(
         request, 
         'webapp/season.html',
-        {'season': season, 'players': Player.objects.all()}
+        {'season': season, 'players': season.players.order_by('lastname')}
     )
 
 def seasons(request):

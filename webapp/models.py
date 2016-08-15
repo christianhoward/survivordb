@@ -25,6 +25,7 @@ class Season(models.Model):
     asd = models.DateField()
     #aed is air end date
     aed = models.DateField()
+    players = models.ManyToManyField(Player, through='PxS')
     
     def __str__(self):
         return self.seasonname
