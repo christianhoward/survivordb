@@ -8,6 +8,7 @@ class Player(models.Model):
     occupation = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
+    p_url = models.CharField(max_length=50, default='noplayerimg.jpg')
     
     def __str__(self):
         name = self.firstname + " " + self.lastname
@@ -26,6 +27,7 @@ class Season(models.Model):
     #aed is air end date
     aed = models.DateField()
     players = models.ManyToManyField(Player, through='PxS')
+    s_url = models.CharField(max_length=50, default='noseasonimg.jpg')
     
     def __str__(self):
         return self.seasonname

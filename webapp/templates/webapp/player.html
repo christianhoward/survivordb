@@ -5,13 +5,13 @@
         <td colspan=3 class="tblheader"><h1>{{ player.firstname }} {{ player.lastname }}</h1></td>
     </tr>
     <tr>
-        <td rowspan=4>INSERT IMAGE HERE</td>
+        <td rowspan=4><img src="http://www.christianhoward.net/img/{{ player.p_url }}" /></td> <!--is this the best way to save images? On own server? -->
         <td>Hometown: {{ player.city }}, {{ player.state }}</td>
         <td>Birthdate: {{ player.birthdate }}</td>
     </tr>
     <tr>
         <td>Occupation: {{ player.occupation }}</td>
-        <td>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
+        <td>Seasons<br>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
     </tr>
 </table>
 <br>
