@@ -7,6 +7,7 @@
     <hr>
     <p><u>Contestants</u></p>
     {% for player in players %}
-        <p><a href="{% url 'player' player.pid %}">{{ player.firstname }} {{ player.lastname }}</a></p>
+            <img src="http://www.christianhoward.net/img/{{ player.p_url }}" /><br>
+            <p><a href="{% url 'player' player.pid %}">{{ player.firstname }} {{ player.lastname }}</a></p>
     {% endfor %}
 {% endblock %}
