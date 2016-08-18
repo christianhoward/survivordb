@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>Occupation: {{ player.occupation }}</td>
-        <td>Seasons<br>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
+        <td><u>Seasons</u><br>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
     </tr>
 </table>
 <br>
