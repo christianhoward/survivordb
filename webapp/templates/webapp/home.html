@@ -1,7 +1,7 @@
 {% extends 'webapp/base.html' %}
 
 {% block content %}
-<form name="searchform" id="" method="POST" action="">{% csrf_token %}
+<!--<form name="searchform" id="" method="POST" action="">{% csrf_token %}
     <fieldset>
         <legend>Search Form</legend>
         <p>Season Name: <select onchange="location = this.options[this.selectedIndex].value;" name="Season" id="" class="" value="Season">
@@ -12,5 +12,15 @@
             </select>
         </p>
     </fieldset>
-</form>
+</form>-->
+{% for season in seasons %}
+        <div class="col-md-3">
+            <a href="{% url 'season' season.sid %}">
+                <img class="img-responsive" src="{{ season.s_url }}" alt="">
+            </a>
+            <p style="text-align: center;">{{ season.seasonname }}</p>
+        </div>
+{% endfor %}
+<br>
+<br>
 {% endblock %}
