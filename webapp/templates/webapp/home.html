@@ -13,13 +13,11 @@
         </p>
     </fieldset>
 </form>-->
-{% for season in seasons %}
+    {% for season in seasons %}
         <div class="col-md-3">
             <a href="{% url 'season' season.sid %}">
                 <img class="img-responsive" src="{{ season.s_url }}" alt="">
                 <p style="text-align: center;">{{ season.seasonname }}</p></a>
         </div>
-{% endfor %}
-<br>
-<br>
+    {% endfor %}
 {% endblock %}
