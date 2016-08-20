@@ -7,8 +7,13 @@
     <hr>
     <p><u>Contestants</u></p>
     {% for player in players %}
-            <!--update src to just player.p_url once links are grabbed-->
-            <img src="http://www.christianhoward.net/img/{{ player.p_url }}" /><br>
-            <p><a href="{% url 'player' player.pid %}">{{ player.firstname }} {{ player.lastname }}</a></p>
+        <!--update src to just player.p_url once links are grabbed-->
+        <div class="col-md-3">
+            <a href="{% url 'player' player.pid %}">
+                <img class="img-responsive" src="{{ player.p_url}}" alt="">
+                <p style="text-align: center;">{{ player.firstname }} {{ player.lastname }}</p></a>
+        </div>
     {% endfor %}
+<br>
+<br>
 {% endblock %}
