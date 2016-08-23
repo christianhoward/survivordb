@@ -1,0 +1,6 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+    {% for player in object_list %}
+        {{ player.playername }}
+    {% endfor %}
+{% endblock %}
