@@ -1,18 +1,6 @@
 {% extends 'webapp/base.html' %}
 
 {% block content %}
-<!--<form name="searchform" id="" method="POST" action="">{% csrf_token %}
-    <fieldset>
-        <legend>Search Form</legend>
-        <p>Season Name: <select onchange="location = this.options[this.selectedIndex].value;" name="Season" id="" class="" value="Season">
-            <option>Choose a Season...</option>
-            {% for season in seasons %}
-                <option value="{% url 'season' season.sid %}">Season {{ season.sid }} -- {{ season.seasonname }}</option>
-            {% endfor %}
-            </select>
-        </p>
-    </fieldset>
-</form>-->
     {% for season in seasons %}
         <div class="col-md-3">
             <a href="{% url 'season' season.sid %}">
