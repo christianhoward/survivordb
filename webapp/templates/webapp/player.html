@@ -6,11 +6,11 @@
     </tr>
     <tr>
         <td rowspan=4><img src="{{ player.p_url }}" /></td>
-        <td>Hometown: {{ player.city }}, {{ player.state }}</td>
-        <td>Birthdate: {{ player.birthdate }}</td>
+        <td><u>Hometown</u><br> {{ player.city }}, {{ player.state }}</td>
+        <td><u>Birthdate</u><br>{{ player.birthdate }}</td>
     </tr>
     <tr>
-        <td>Occupation: {{ player.occupation }}</td>
+        <td><u>Occupation</u><br>{{ player.occupation }}</td>
         <td><u>Seasons</u><br>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
     </tr>
 </table>
