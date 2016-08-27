@@ -12,18 +12,13 @@
     </head>
     <body>
         <div class="page-header">
-            <ul style="display:inline;">
-                <li style="list-style-type:none;">
-                    <h1>
-                        <a href="{% url 'webapp.views.home' %}">SurvivorDB Web App</a>
-                    </h1>
-                </li>
-            <li style="list-style-type:none; text-align:right;">
-                <form type="get" action="." style="margin: 0">
+            <h1>
+                <a href="{% url 'webapp.views.home' %}">SurvivorDB Web App</a>
+            </h1>
+            <form type="get" action="." style="margin: 0">
                 <input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
                 <button id="search_submit" type="submit" >Submit</button>
-</form>
-            </li>
+            </form>
         </div>
         <div class="content container">
             <div class="row">

@@ -10,14 +10,12 @@
     <p>Air Dates: {{ season.asd }} -- {{ season.aed }}</p>
         </div></div>
     <hr>
-    <h1 style="text-align: center; font-family:'Allerta'"><u>Contestants</u></h1>
     {% for player in players %}
         <!--update src to just player.p_url once links are grabbed-->
-        <div class="col-md-3">
+        <div class="col-xs-3">
             <a href="{% url 'player' player.pid %}">
                 <img class="img-responsive" src="{{ player.p_url}}" alt="">
-                <p style="text-align: center;">{{ player.firstname }} {{ player.lastname }}</p>
-            </a>
+                <p style="text-align: center;">{{ player.firstname }} {{ player.lastname }}</p></a>
         </div>
     {% endfor %}
 {% endblock %}
