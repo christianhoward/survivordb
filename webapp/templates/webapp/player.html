@@ -6,7 +6,7 @@
             <td colspan=3 class="tblheader"><h1>{{ player.firstname }} {{ player.lastname }}</h1></td>
         </tr>
         <tr>
-            <td rowspan=4><img src="{{ player.p_url }}" /></td>
+            <td rowspan=2><img src="{{ player.p_url }}" /></td>
             <td><u>Hometown</u><br> {{ player.city }}, {{ player.state }}</td>
             <td><u>Birthdate</u><br>{{ player.birthdate }}</td>
         </tr>
@@ -14,11 +14,14 @@
             <td><u>Occupation</u><br>{{ player.occupation }}</td>
             <td><u>Seasons</u><br>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
         </tr>
+        <tr>
+            <td colspan=3><div class="pull-me">Click for Spoilers</div></td>
+        </tr>
     </table>
 </div>
 <br>
 {% for stat in statistics %}
-<table>
+<table class="panel">
     <tr>
         <td colspan=3 class="tblheader"><h1>Statistics</h1></td>
     </tr>
