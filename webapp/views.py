@@ -15,7 +15,7 @@ def season(request, pk):
     return render(
         request, 
         'webapp/season.html',
-        {'season': season, 'players': season.players.order_by('lastname')}
+        {'season': season, 'players': season.players.all()} # .all or .order_by('lastname)???
     )
 
 def seasons(request):
