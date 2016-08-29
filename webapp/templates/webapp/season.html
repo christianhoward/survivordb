@@ -10,15 +10,15 @@
     <p>Air Dates: {{ season.asd }} -- {{ season.aed }}</p>
         </div></div>
     <hr>
-    <p>Sort: <a href="" class="alpha">Alphabetical</a> | <a href="" class="finish">Finishing Position</a></p>
-    {% for player in players %}
+    <p>Sort: <a href="#" class="alpha">Alphabetical</a> | <a href="#" class="finish">Finishing Position</a></p>
         <!--update src to just player.p_url once links are grabbed-->
     <div class="people">
-        <div class="col-xs-3" data-name="{{ player.lastname }}" data-id="{{ player.pid }}">
+        {% for player in players %}
+        <div class="col-xs-3" data-name="{{ player.lastname }}" data-id={{ player.pid }}>
             <a href="{% url 'player' player.pid %}">
                 <img class="img-responsive" src="{{ player.p_url}}" alt="">
                 <p style="text-align: center;">{{ player.firstname }} {{ player.lastname }} <!--{% for x in Pxs %} {{ x.finishposition }} {% endfor %} WHAT IS WRONG HERE???--></p></a>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endblock %}
