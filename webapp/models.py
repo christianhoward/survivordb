@@ -47,6 +47,9 @@ class PxS(models.Model):
         name = "Player: " + str(self.pid) + " | Season: " + str(self.sid)
         return name
     
+    class Meta:
+        ordering = ['pid__lastname', 'pid__firstname']
+    
 class Statistics(models.Model):
     pid = models.ForeignKey('Player', on_delete = models.CASCADE,)
     totalseasons = models.IntegerField()

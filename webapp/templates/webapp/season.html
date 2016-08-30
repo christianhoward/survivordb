@@ -14,10 +14,10 @@
         <!--update src to just player.p_url once links are grabbed-->
     <div class="people">
         {% for player in season.pxs_set.all %}
-        <div class="col-xs-3" data-name="{{ player.pid.lastname }}" data-id={{ player.pid.pid }}>
+        <div class="col-xs-3" data-name="{{ player.pid.lastname }}" data-id={{ player.finishposition }}>
             <a href="{% url 'player' player.pid.pid %}">
                 <img class="img-responsive" src="{{ player.pid.p_url}}" alt="">
-                <p style="text-align: center;">{{ player.pid.firstname }} {{ player.pid.lastname }} {{ player.finishposition }}</p></a>
+                <p style="text-align: center;">{{ player.pid.firstname }} {{ player.pid.lastname }}</p></a>
         </div>
         {% endfor %}
     </div>
