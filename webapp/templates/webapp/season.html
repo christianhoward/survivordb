@@ -16,7 +16,7 @@
         {% for player in season.pxs_set.all %}
         <div class="col-xs-3" data-name="{{ player.pid.lastname }}" data-id={{ player.finishposition }}>
             <a href="{% url 'player' player.pid.pid %}">
-                <img class="img-responsive" src="{{ player.pid.p_url}}" alt="">
+                <img class="img-responsive" id="playerimg" src="{{ player.pid.p_url}}" alt="">
                 <p style="text-align: center;">{{ player.pid.firstname }} {{ player.pid.lastname }}</p></a>
         </div>
         {% endfor %}

@@ -59,4 +59,14 @@ table, th, tr, td {
 
 
 }
+
+#logo {
+    width: 350px;
+    height: 225px;
+}
+
+#playerimg {
+    width: 200px;
+    height: 244px;
+}
 /* https://designschool.canva.com/blog/100-color-combinations #70 */

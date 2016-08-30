@@ -8,7 +8,7 @@ class Player(models.Model):
     occupation = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
-    p_url = models.CharField(max_length=50, default='noplayerimg.jpg')
+    p_url = models.CharField(max_length=255)
     
     def __str__(self):
         name = self.firstname + " " + self.lastname
@@ -30,7 +30,7 @@ class Season(models.Model):
     #aed is air end date
     aed = models.DateField()
     players = models.ManyToManyField(Player, through='PxS')
-    s_url = models.CharField(max_length=50, default='noseasonimg.jpg')
+    s_url = models.CharField(max_length=255)
     
     def __str__(self):
         return self.seasonname
@@ -59,10 +59,10 @@ class Statistics(models.Model):
     totalwins = models.IntegerField()
     # total votes received against the player
     totalvotesreceived = models.IntegerField()
-    daysonexile = models.IntegerField()
-    daysonredemption = models.IntegerField()
+    daysonexile = models.CharField(max_length=10)
+    daysonredemption = models.CharField(max_length=10)
     # total duels won on Redemption Island
-    totalduelswon = models.IntegerField()
+    totalduelswon = models.CharField(max_length=10)
     
     def __str__(self):
         return str(self.pid)

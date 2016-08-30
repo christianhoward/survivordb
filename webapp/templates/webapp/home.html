@@ -2,9 +2,9 @@
 
 {% block content %}
     {% for season in seasons %}
-        <div class="col-md-3">
+        <div class="col-xs-4">
             <a href="{% url 'season' season.sid %}">
-                <img class="img-responsive" src="{{ season.s_url }}" alt="">
+                <img class="img-responsive" id="logo" src="{{ season.s_url }}" alt="">
                 <p style="text-align: center;">{{ season.seasonname }}</p></a>
         </div>
     {% endfor %}

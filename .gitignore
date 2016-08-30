@@ -6,3 +6,8 @@ db.sqlite3
 .DS_Store
 table schema.xlsx
 ~$table schema.xlsx
+playertable.csv
+pxstable.csv
+seasontable.csv
+statstable.csv
+test schema.xlsx
