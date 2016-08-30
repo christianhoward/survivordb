@@ -13,6 +13,9 @@ class Player(models.Model):
     def __str__(self):
         name = self.firstname + " " + self.lastname
         return name
+    
+    class Meta:
+        ordering = ["lastname", "firstname"]
 
 class Season(models.Model):
     sid = models.IntegerField(primary_key=True)
