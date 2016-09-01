@@ -13,7 +13,7 @@ $(document).ready(function() {
     
     $('.finish').on('click', function () { 
         var numericallyOrderedDivs = $divs.get().sort(function (a, b) { 
-            return $(a).attr('data-id') - $(b).attr('data-id'); 
+            return $(a).attr('data-id') > $(b).attr('data-id'); 
         });
         $('.people').empty().append(numericallyOrderedDivs);
     });
