@@ -15,9 +15,19 @@
     <div class="people">
         {% for player in season.pxs_set.all %}
         <div class="col-xs-3" data-name="{{ player.pid.lastname }}" data-id={{ player.finishposition }}>
+            <table id="seasontable">
+                <tr id="seasontable">
+                    <td id="seasontable">
             <a href="{% url 'player' player.pid.pid %}">
-                <img class="img-responsive" id="playerimg" src="{{ player.pid.p_url}}" alt="">
-                <p style="text-align: center;">{{ player.pid.firstname }} {{ player.pid.lastname }}</p></a>
+                <img class="img-responsive" id="playerimg" src="{{ player.pid.p_url}}" alt=""></a>
+                    </td>
+                </tr>
+                <tr id="seasontable">
+                    <td id="seasontable">
+            <a href="{% url 'player' player.pid.pid %}"><p style="text-align: center;">{{ player.pid.firstname }} {{ player.pid.lastname }}</p></a>
+                    </td>
+                </tr>
+            </table>
         </div>
         {% endfor %}
     </div>

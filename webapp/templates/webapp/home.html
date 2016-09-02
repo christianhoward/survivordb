@@ -3,9 +3,18 @@
 {% block content %}
     {% for season in seasons %}
         <div class="col-xs-4">
-            <a href="{% url 'season' season.sid %}">
-                <img class="img-responsive" id="xlogo" src="{{ season.s_url }}" alt="">
-                <p style="text-align: center;">{{ season.seasonname }}</p></a>
+            <table id="seasontable">
+                <tr id="seasontable">
+                    <td id="seasontable">
+            <a href="{% url 'season' season.sid %}"><img class="img-responsive" id="xlogo" src="{{ season.s_url }}" alt=""></a>
+                    </td>
+                </tr>
+                <tr id="seasontable">
+                    <td id="seasontable">
+            <a href="{% url 'season' season.sid %}"><p style="text-align: center;">{{ season.seasonname }}</p></a>
+                    </td>
+                </tr>
+            </table>
         </div>
     {% endfor %}
 {% endblock %}

@@ -56,17 +56,11 @@ table, th, tr, td {
 	font-family:'Allerta';
 	color:#e2e8e4;
     background:#006c84;
-
-
 }
 
-#logo {
-    width: 350px;
-    height: 225px;
-}
-
-#playerimg {
-    width: 200px;
-    height: 244px;
+#seasontable {
+    text-align: center;
+    border: 0px;
+    border-collapse: collapse;    
 }
 /* https://designschool.canva.com/blog/100-color-combinations #70 */
