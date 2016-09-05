@@ -11,8 +11,8 @@
         </div></div>
     <hr>
     <p>Sort: <a href="#" class="alpha">Alphabetical</a> | <a href="#" class="finish">Finishing Position</a></p>
-        <!--update src to just player.p_url once links are grabbed-->
     <div class="people">
+        <!--FOR LOOP for all player data through the PxS model-->
         {% for player in season.pxs_set.all %}
         <div class="col-xs-3" data-name="{{ player.pid.lastname }}" data-id={{ player.finishposition }}>
             <table id="seasontable">
