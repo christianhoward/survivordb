@@ -12,6 +12,7 @@
         </tr>
         <tr>
             <td><u>Occupation</u><br>{{ player.occupation }}</td>
+            <!--FOR LOOP for each associated season the player participated in-->
             <td><u>Seasons</u><br>{% for season in seasons %}<a href="{% url 'season' season.sid %}">{{ season.seasonname }}</a> <br>{% endfor %}</td>
         </tr>
         <tr>
@@ -20,6 +21,7 @@
     </table>
 </div>
 <br>
+<!--For loop to show statistics in the table-->
 {% for stat in statistics %}
 <table class="panel">
     <tr>
