@@ -1,5 +1,6 @@
 from django.db import models
 
+#player model
 class Player(models.Model):
     pid = models.IntegerField(primary_key=True)
     firstname = models.CharField(max_length=50)
@@ -17,6 +18,7 @@ class Player(models.Model):
     class Meta:
         ordering = ["lastname", "firstname"]
 
+#season model
 class Season(models.Model):
     sid = models.IntegerField(primary_key=True)
     seasonname = models.CharField(max_length=50)
@@ -34,7 +36,8 @@ class Season(models.Model):
     
     def __str__(self):
         return self.seasonname
-    
+
+#player - season bridge model    
 class PxS(models.Model):
     pid = models.ForeignKey('Player', on_delete = models.CASCADE,)
     sid = models.ForeignKey('Season', on_delete = models.CASCADE,)
@@ -50,6 +53,7 @@ class PxS(models.Model):
     class Meta:
         ordering = ['pid__lastname', 'pid__firstname']
     
+#stats model    
 class Statistics(models.Model):
     pid = models.ForeignKey('Player', on_delete = models.CASCADE,)
     totalseasons = models.IntegerField()
