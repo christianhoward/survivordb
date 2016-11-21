@@ -1,3 +1,4 @@
+//jQuery function that sorts player div containers by season finishing position or by alphabetical order
 $(document).ready(function() {
     $('.togglespoilers').click(function() {
         $('.panel').slideToggle('slow');
